@@ -6,6 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
+
+
 class ChildSeeder extends Seeder
 {
     /**
@@ -14,6 +17,7 @@ class ChildSeeder extends Seeder
     public function run(): void
     {
         DB::table('children')->insert([
+            'user_id' => 1,
             'name' => 'Test User Child',
             'birthday' => '2020-01-01',
             'gender' => 'Test gender',

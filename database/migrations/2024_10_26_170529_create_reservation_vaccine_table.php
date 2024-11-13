@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('reservation_vaccine', function (Blueprint $table) {
             $table->id();
             $table->foreignId('reservation_id')->constrained('vaccines');   
-            $table->foreignId('vaccine_id')->constrained('reservations');    //constrainedに記載
-            $table->primary(['reservation_id', 'vaccine_id']);  
+            $table->foreignId('vaccine_id')->constrained('reservations');    //constrainedに記
+            // $table->primary(['reservation_id', 'vaccine_id']);  
         });
     }
 

@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('clinic_id')->constrained()->onDelete('cascade');
+            $table->foreignId('child_id')->constrained()->onDelete('cascade');
+            $table->foreignId('child_name')->constrained()->onDelete('cascade');
             $table->date('date');
             $table->enum('consultion_reason', ['一般診療(発熱あり)', '一般診療(発熱なし)', '予防接種', '乳幼児検診']);
             $table->boolean('is_cancelled');
-        
-
+            $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
